@@ -17,7 +17,7 @@ namespace TechStore.Controllers
         {
             _logger=logger;
         }        
-        public IActionResult AddProduct()
+        public IActionResult Product()
         {
             return View();
         }
@@ -30,10 +30,20 @@ namespace TechStore.Controllers
             {
                 product.IGV = product.Price * 0.18m;
                 // Add your logic to save the product here
+                ViewBag.ProductName = product.Name;
+                ViewBag.ProductDescription = product.Description;
+                ViewBag.ProductPrice = product.Price;
+                ViewBag.ProductIGV = product.IGV;
+                ViewData["Message"]="Su Precio a pagar es";
                 return RedirectToAction("Index", "Home");
             }
-
+            
             return View(product);
+        }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View("Error!");
         }
     }
 }

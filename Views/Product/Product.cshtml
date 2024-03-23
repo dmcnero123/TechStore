@@ -33,11 +33,30 @@
 </form>
 <h1>@ViewData["Message"]</h1>
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Product">Back to List</a>
     </div>
         </div>
     </div>
 </div>
+@if (ViewBag.ProductName != null)
+{
+    <div>
+        <p>Product Name: @ViewBag.ProductName</p>
+        <p>Description: @ViewBag.ProductDescription</p>
+        <p>Price: @ViewBag.ProductPrice</p>
+        <p>IGV: @ViewBag.ProductIGV</p>
+    </div>
+}
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+    document.getElementById('Price').addEventListener('input', function() {
+        var price = parseFloat(this.value);
+        if (isNaN(price)) {
+            price = 0.00;
+        }
+        document.getElementById('IGV').value = (price * 0.18).toFixed(2);
+    });
+</script>
+}
 }
