@@ -28,3 +28,4 @@ D:\Programas\Visual Code\TechStore\obj\Debug\net8.0\refint\TechStore.dll
 D:\Programas\Visual Code\TechStore\obj\Debug\net8.0\TechStore.pdb
 D:\Programas\Visual Code\TechStore\obj\Debug\net8.0\TechStore.genruntimeconfig.cache
 D:\Programas\Visual Code\TechStore\obj\Debug\net8.0\ref\TechStore.dll
+D:\Programas\Visual Code\TechStore\obj\Debug\net8.0\TechStore.sourcelink.json
